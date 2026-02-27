@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # School Website & Admin Dashboard
 
 Full-stack bilingual school website with admin management system for **New High School, Kolhapur**.
@@ -183,3 +184,6 @@ npm run dev
 ## 📄 License
 
 © 2026 New High School, Kolhapur. All rights reserved.
+=======
+# School_Project
+>>>>>>> bc0fc2572331a02208fc6d83c6f45e48deea9536
