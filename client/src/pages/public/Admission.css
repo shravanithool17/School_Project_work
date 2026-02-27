@@ -1,0 +1,344 @@
+/* ===========================
+   ADMISSION PAGE — NHS STYLE
+   Contact page se match kiya
+   =========================== */
+
+.page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: #f1f5f9;
+}
+
+/* ---- Header (same dark navy as Contact) ---- */
+.page-header {
+    position: relative;
+    background: #0f172a;
+    padding: 120px 0 100px;
+    margin-top: 0;
+    text-align: center;
+    overflow: hidden;
+}
+
+.page-header .container {
+    position: relative;
+    z-index: 2;
+    max-width: 680px;
+    margin: 0 auto;
+}
+
+.page-header h1 {
+    font-size: clamp(2.8rem, 6vw, 4.5rem);
+    font-weight: 900;
+    color: #ffffff;
+    margin: 0 0 18px;
+    line-height: 1.05;
+    letter-spacing: -2px;
+}
+
+.page-header p {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.65);
+    line-height: 1.65;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* Wave bottom */
+.page-header__wave {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    z-index: 3;
+    line-height: 0;
+}
+
+.page-header__wave svg {
+    width: 100%;
+    height: 80px;
+}
+
+/* ---- Section ---- */
+.section {
+    padding: 70px 0 80px;
+    background: #f1f5f9;
+}
+
+/* ---- Admission Container ---- */
+.admission-container {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 32px;
+    align-items: start;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+@media (max-width: 900px) {
+    .admission-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ---- Cards (white) ---- */
+.admission-form,
+.admission-info {
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 40px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.07);
+    border: 1px solid #e2e8f0;
+}
+
+/* ---- Card Headings ---- */
+.admission-info h3,
+.admission-form-heading {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0 0 10px;
+}
+
+.admission-info h3:not(:first-child) {
+    margin-top: 2.5rem;
+}
+
+/* Divider under heading */
+.admission-info h3::after,
+.admission-form-heading::after {
+    content: '';
+    display: block;
+    width: 48px;
+    height: 4px;
+    background: linear-gradient(90deg, #06b6d4, #3b82f6);
+    border-radius: 99px;
+    margin-top: 10px;
+    margin-bottom: 28px;
+}
+
+/* ---- Form Styles ---- */
+.form-group {
+    margin-bottom: 1.25rem;
+}
+
+.form-label {
+    display: block;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #475569;
+    margin-bottom: 6px;
+    letter-spacing: 0.3px;
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 12px;
+    font-size: 0.92rem;
+    color: #0f172a;
+    background: #f8fafc;
+    outline: none;
+    transition: all 0.2s ease;
+    font-family: inherit;
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+    border-color: #3b82f6;
+    background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+    color: #94a3b8;
+}
+
+.form-textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.form-select {
+    appearance: none;
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2394a3b8' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    padding-right: 40px;
+}
+
+/* Form Row */
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 1.25rem;
+}
+
+@media (max-width: 600px) {
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Error */
+.error-text {
+    display: block;
+    color: #ef4444;
+    font-size: 0.78rem;
+    margin-top: 4px;
+    font-weight: 500;
+}
+
+/* ---- Alert ---- */
+.alert {
+    padding: 1rem 1.25rem;
+    border-radius: 12px;
+    margin-bottom: 1.25rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.alert-success {
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    color: #16a34a;
+}
+
+.alert-error {
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    color: #dc2626;
+}
+
+/* ---- Submit Button ---- */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 14px 32px;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    transition: all 0.25s ease;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #1d4ed8, #0ea5e9);
+    color: #ffffff;
+    box-shadow: 0 4px 16px rgba(29, 78, 216, 0.3);
+}
+
+.btn-primary:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(29, 78, 216, 0.4);
+}
+
+.btn-primary:disabled {
+    opacity: 0.75;
+    cursor: not-allowed;
+}
+
+.btn-lg {
+    width: 100%;
+    padding: 14px 32px;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+}
+
+/* ---- Admission Info List ---- */
+.admission-info ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.admission-info li {
+    padding: 12px 16px;
+    margin-bottom: 10px;
+    background: #f8fafc;
+    border-radius: 12px;
+    border-left: 4px solid #1d4ed8;
+    color: #374151;
+    font-weight: 500;
+    font-size: 0.9375rem;
+    transition: all 0.2s ease;
+}
+
+.admission-info li:hover {
+    transform: translateX(6px);
+    background: #eff6ff;
+    border-left-color: #06b6d4;
+}
+
+.admission-info li:last-child {
+    margin-bottom: 0;
+}
+
+.admission-info li::before {
+    content: '✓';
+    color: #1d4ed8;
+    font-weight: 700;
+    margin-right: 8px;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 768px) {
+    .page-header {
+        padding: 90px 0 80px;
+        margin-top: 70px;
+    }
+
+    .admission-form,
+    .admission-info {
+        padding: 28px 20px;
+    }
+
+    .section {
+        padding: 3rem 0 60px;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-header h1 {
+        letter-spacing: -1px;
+    }
+
+    .btn-lg {
+        width: 100%;
+    }
+}
+
+/* ---- Reduced Motion ---- */
+@media (prefers-reduced-motion: reduce) {
+    .alert,
+    .admission-info li,
+    .btn-primary {
+        transition: none;
+        animation: none;
+    }
+
+    .admission-info li:hover,
+    .btn-primary:hover {
+        transform: none;
+    }
+}

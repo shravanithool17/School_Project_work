@@ -1,0 +1,134 @@
+/* ===== App Layout ===== */
+.app-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+}
+
+.auth-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+}
+
+.admin-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+}
+
+.main-content {
+  flex: 1 0 auto;
+  padding-top: 0;
+}
+
+.content-wrapper {
+  width: 100%;
+  max-width: var(--container-2xl);
+  margin: 0 auto;
+  padding: 0 var(--spacing-xl);
+}
+
+/* ✅ FIXED: auth-content centers the card properly */
+.auth-content {
+  flex: 1 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: calc(70px + 2rem) 2rem 2rem;  /* top = navbar + gap */
+  min-height: 100vh;
+}
+
+.admin-content {
+  flex: 1 0 auto;
+  padding-top: 70px;
+}
+
+.admin-wrapper {
+  width: 100%;
+  max-width: var(--container-2xl);
+  margin: 0 auto;
+  padding: var(--spacing-xl);
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--color-light-gray);
+  margin-bottom: var(--spacing-3xl);
+}
+
+.page-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: var(--color-light);
+  gap: var(--spacing-md);
+}
+
+.loading-spinner {
+  width: 48px;
+  height: 48px;
+  border: 3px solid var(--color-light-gray);
+  border-top-color: var(--color-primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.scroll-progress {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(to right, var(--color-primary), var(--color-accent));
+  transform-origin: 0 50%;
+  transform: scaleX(0);
+  transition: transform var(--transition-base);
+  z-index: var(--z-fixed);
+}
+
+.section-white { background-color: var(--color-white); }
+.section-light { background-color: var(--color-light); }
+.section-primary { background-color: var(--color-primary); color: var(--color-white); }
+.section-primary h1,.section-primary h2,.section-primary h3,
+.section-primary h4,.section-primary h5,.section-primary h6,
+.section-primary p { color: var(--color-white); }
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--spacing-xl);
+  margin: var(--spacing-xl) 0;
+}
+
+@media (max-width: 768px) {
+  .content-wrapper, .admin-wrapper { padding: 0 var(--spacing-md); }
+  .auth-content { padding: calc(70px + 1rem) 1rem 1rem; }
+}
+@media (max-width: 480px) {
+  .card-grid { grid-template-columns: 1fr; gap: var(--spacing-lg); }
+}
+
+.section-scroll { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.section-scroll.visible { opacity: 1; transform: translateY(0); }
+
+.text-center{text-align:center} .text-left{text-align:left} .text-right{text-align:right}
+.mt-0{margin-top:0} .mb-0{margin-bottom:0}
+.mt-1{margin-top:var(--spacing-xs)} .mb-1{margin-bottom:var(--spacing-xs)}
+.mt-2{margin-top:var(--spacing-sm)} .mb-2{margin-bottom:var(--spacing-sm)}
+.mt-3{margin-top:var(--spacing-md)} .mb-3{margin-bottom:var(--spacing-md)}
+.mt-4{margin-top:var(--spacing-lg)} .mb-4{margin-bottom:var(--spacing-lg)}
+.mt-5{margin-top:var(--spacing-xl)} .mb-5{margin-bottom:var(--spacing-xl)}
+.mt-6{margin-top:var(--spacing-2xl)} .mb-6{margin-bottom:var(--spacing-2xl)}
+.pt-0{padding-top:0} .pb-0{padding-bottom:0}
+.pt-1{padding-top:var(--spacing-xs)} .pb-1{padding-bottom:var(--spacing-xs)}
+.pt-2{padding-top:var(--spacing-sm)} .pb-2{padding-bottom:var(--spacing-sm)}
+.pt-3{padding-top:var(--spacing-md)} .pb-3{padding-bottom:var(--spacing-md)}
+.pt-4{padding-top:var(--spacing-lg)} .pb-4{padding-bottom:var(--spacing-lg)}
+.pt-5{padding-top:var(--spacing-xl)} .pb-5{padding-bottom:var(--spacing-xl)}
+.pt-6{padding-top:var(--spacing-2xl)} .pb-6{padding-bottom:var(--spacing-2xl)}

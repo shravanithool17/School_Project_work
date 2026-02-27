@@ -1,0 +1,792 @@
+/* ===== PERFECT INDEX.CSS - MATCHING YOUR NAVBAR ===== */
+
+/* ========================================
+   CSS VARIABLES - MATCHING YOUR DESIGN
+   ======================================== */
+
+:root {
+    --color-primary: #1d4ed8;
+    --color-primary-dark: #1e40af;
+    --color-primary-light: #3b82f6;
+    --color-accent: #14b8a6;
+    --color-accent-dark: #0f766e;
+    --color-white: #ffffff;
+    --color-black: #000000;
+    --color-dark: #0f172a;
+    --color-light: #f8fafc;
+    --color-gray: #64748b;
+    --color-light-gray: #e2e8f0;
+    --color-dark-gray: #475569;
+    --color-success: #10b981;
+    --color-warning: #fbbf24;
+    --color-error: #ef4444;
+    --color-info: #3b82f6;
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+    --spacing-2xl: 3rem;
+    --spacing-3xl: 4rem;
+    --spacing-4xl: 5rem;
+    --radius-sm: 4px;
+    --radius-base: 6px;
+    --radius-lg: 10px;
+    --radius-xl: 16px;
+    --radius-2xl: 20px;
+    --radius-full: 9999px;
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    --font-size-xs: 0.75rem;
+    --font-size-sm: 0.875rem;
+    --font-size-base: 1rem;
+    --font-size-lg: 1.125rem;
+    --font-size-xl: 1.25rem;
+    --font-size-2xl: 1.5rem;
+    --font-size-3xl: 1.875rem;
+    --font-size-4xl: 2.25rem;
+    --font-size-5xl: 3rem;
+    --font-size-6xl: 3.75rem;
+    --line-height-tight: 1.25;
+    --line-height-normal: 1.5;
+    --line-height-relaxed: 1.7;
+    --transition-fast: 150ms ease-in-out;
+    --transition-base: 300ms ease-in-out;
+    --transition-slow: 500ms ease-in-out;
+    --z-dropdown: 1000;
+    --z-sticky: 1020;
+    --z-fixed: 1030;
+    --z-modal-backdrop: 1040;
+    --z-modal: 1050;
+    --z-popover: 1060;
+    --z-tooltip: 1070;
+    --navbar-height: 64px;
+}
+
+/* ========================================
+   RESET & BASE STYLES
+   ======================================== */
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: calc(var(--navbar-height) + 1rem);
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: var(--color-light);
+    color: var(--color-dark);
+    line-height: var(--line-height-normal);
+    font-size: var(--font-size-base);
+}
+
+/* ========================================
+   CONTAINER
+   ======================================== */
+
+.container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 1rem;
+    }
+}
+
+/* ========================================
+   PAGE SPACING (FOR FIXED NAVBAR)
+   ======================================== */
+
+.page {
+    margin-top: var(--navbar-height);
+    min-height: 100vh;
+}
+
+.hero {
+    margin-top: 70px;
+    min-height: 85vh;
+    background: linear-gradient(rgba(15, 23, 42, 0.88), rgba(29, 78, 216, 0.1)),
+                url('/school_hero.png') center/cover;
+    padding-top: 2rem;
+}
+
+/* ========================================
+   PAGE HEADER - CLEAN BLUE (NO BANDING)
+   ======================================== */
+
+.page-header,
+.about-header,
+.events-header,
+.gallery-header,
+.contact-header,
+.faculty-header,
+.admission-header {
+    background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 50%, #3b82f6 100%);
+    color: #ffffff;
+    padding: 5rem 0;
+    text-align: center;
+    margin-top: 70px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(29, 78, 216, 0.3);
+}
+
+/* NO ::before on page-header — removed to fix dark banded effect */
+
+.page-header .container,
+.about-header .container,
+.events-header .container,
+.gallery-header .container,
+.contact-header .container,
+.faculty-header .container,
+.admission-header .container {
+    position: relative;
+    z-index: 2;
+}
+
+.page-header h1,
+.about-header h1,
+.events-header h1,
+.gallery-header h1,
+.contact-header h1,
+.faculty-header h1,
+.admission-header h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 800;
+    margin-bottom: 1rem;
+    color: #ffffff;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    letter-spacing: -0.5px;
+}
+
+.page-header p,
+.about-header p,
+.events-header p,
+.gallery-header p,
+.contact-header p,
+.faculty-header p,
+.admission-header p {
+    font-size: clamp(1.125rem, 2vw, 1.5rem);
+    color: rgba(255, 255, 255, 0.95);
+    max-width: 700px;
+    margin: 0 auto;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+/* ========================================
+   TYPOGRAPHY
+   ======================================== */
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    line-height: var(--line-height-tight);
+    color: var(--color-dark);
+    margin-bottom: var(--spacing-md);
+}
+
+h1 { font-size: var(--font-size-5xl); }
+h2 { font-size: var(--font-size-4xl); }
+h3 { font-size: var(--font-size-3xl); }
+h4 { font-size: var(--font-size-2xl); }
+h5 { font-size: var(--font-size-xl); }
+h6 { font-size: var(--font-size-lg); }
+
+p {
+    margin-bottom: var(--spacing-md);
+    line-height: var(--line-height-relaxed);
+    color: var(--color-dark-gray);
+}
+
+a {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+a:hover {
+    color: var(--color-primary-dark);
+}
+
+/* ========================================
+   UTILITY CLASSES
+   ======================================== */
+
+.text-primary { color: var(--color-primary); }
+.text-accent { color: var(--color-accent); }
+.text-success { color: var(--color-success); }
+.text-warning { color: var(--color-warning); }
+.text-error { color: var(--color-error); }
+.text-muted { color: var(--color-gray); }
+.text-dark { color: var(--color-dark); }
+.text-white { color: var(--color-white); }
+.text-xs { font-size: var(--font-size-xs); }
+.text-sm { font-size: var(--font-size-sm); }
+.text-base { font-size: var(--font-size-base); }
+.text-lg { font-size: var(--font-size-lg); }
+.text-xl { font-size: var(--font-size-xl); }
+.text-2xl { font-size: var(--font-size-2xl); }
+.font-normal { font-weight: 400; }
+.font-medium { font-weight: 500; }
+.font-semibold { font-weight: 600; }
+.font-bold { font-weight: 700; }
+.text-left { text-align: left; }
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+
+/* ========================================
+   BUTTON STYLES
+   ======================================== */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    padding: 0.875rem 1.5rem;
+    border-radius: var(--radius-base);
+    font-weight: 600;
+    font-size: var(--font-size-base);
+    line-height: 1;
+    text-decoration: none;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: all var(--transition-base);
+    white-space: nowrap;
+}
+
+.btn-primary,
+.button-primary {
+    background: linear-gradient(135deg, #1d4ed8 0%, #3b82f6 100%);
+    color: #ffffff;
+    border: 2px solid #1d4ed8;
+}
+
+.btn-primary:hover,
+.button-primary:hover {
+    background: linear-gradient(135deg, #1e40af 0%, #2563eb 100%);
+    border-color: #1e40af;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(29, 78, 216, 0.3);
+}
+
+.btn-accent,
+.button-accent {
+    background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%);
+    color: #ffffff;
+    border: 2px solid #14b8a6;
+}
+
+.btn-accent:hover,
+.button-accent:hover {
+    background: linear-gradient(135deg, #0f766e 0%, #0d9488 100%);
+    border-color: #0f766e;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(20, 184, 166, 0.3);
+}
+
+.btn-outline,
+.button-outline {
+    background: transparent;
+    border: 2px solid #1d4ed8;
+    color: #1d4ed8;
+}
+
+.btn-outline:hover,
+.button-outline:hover {
+    background: #1d4ed8;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(29, 78, 216, 0.2);
+}
+
+.btn-sm { padding: 0.5rem 1rem; font-size: var(--font-size-sm); }
+.btn-lg { padding: 1rem 2rem; font-size: var(--font-size-lg); }
+.btn-xl { padding: 1.25rem 2.5rem; font-size: var(--font-size-xl); }
+.btn-block { width: 100%; }
+
+.btn:disabled,
+.btn.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.btn:disabled:hover,
+.btn.disabled:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+/* ========================================
+   SECTION STYLES
+   ======================================== */
+
+.section {
+    padding: var(--spacing-4xl) 0;
+    position: relative;
+}
+
+.section:nth-child(even) { background: var(--color-white); }
+.section:nth-child(odd) { background: var(--color-light); }
+
+.section-title {
+    font-size: var(--font-size-4xl);
+    font-weight: 700;
+    color: var(--color-dark);
+    margin-bottom: var(--spacing-2xl);
+    text-align: center;
+    position: relative;
+    padding-bottom: var(--spacing-lg);
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #1d4ed8 0%, #3b82f6 100%);
+    border-radius: var(--radius-full);
+}
+
+.section-subtitle {
+    font-size: var(--font-size-xl);
+    color: var(--color-gray);
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto var(--spacing-3xl);
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-2xl);
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+}
+
+/* ========================================
+   CARD STYLES
+   ======================================== */
+
+.card {
+    background: var(--color-white);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--color-light-gray);
+    transition: all var(--transition-base);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 25px -5px rgba(29, 78, 216, 0.1);
+    border-color: #3b82f6;
+}
+
+.card-header {
+    padding: var(--spacing-lg);
+    border-bottom: 1px solid var(--color-light-gray);
+    background: var(--color-light);
+}
+
+.card-body {
+    padding: var(--spacing-lg);
+    flex: 1;
+}
+
+.card-footer {
+    padding: var(--spacing-lg);
+    border-top: 1px solid var(--color-light-gray);
+    background: var(--color-light);
+}
+
+/* ========================================
+   GRID LAYOUTS
+   ======================================== */
+
+.grid { display: grid; gap: var(--spacing-xl); }
+.grid-2 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+.grid-3 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+.grid-4 { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+
+@media (max-width: 768px) {
+    .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+}
+
+/* ========================================
+   FORM STYLES
+   ======================================== */
+
+.form-group { margin-bottom: var(--spacing-lg); }
+
+.form-label {
+    display: block;
+    font-weight: 600;
+    font-size: var(--font-size-sm);
+    color: var(--color-dark);
+    margin-bottom: var(--spacing-xs);
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    border: 2px solid var(--color-light-gray);
+    border-radius: var(--radius-base);
+    font-size: var(--font-size-base);
+    color: var(--color-dark);
+    transition: all var(--transition-fast);
+    background: var(--color-white);
+    font-family: inherit;
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+    outline: none;
+    border-color: #1d4ed8;
+    box-shadow: 0 0 0 3px rgba(29, 78, 216, 0.1);
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder { color: var(--color-gray); }
+
+.form-textarea { min-height: 120px; resize: vertical; }
+
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.error-text {
+    display: block;
+    color: var(--color-error);
+    font-size: var(--font-size-sm);
+    margin-top: var(--spacing-xs);
+    font-weight: 500;
+}
+
+/* ========================================
+   ADMISSION & CONTACT FORM STYLES
+   ======================================== */
+
+.admission-form,
+.contact-form {
+    background: #ffffff;
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e2e8f0;
+}
+
+.admission-form .btn-primary,
+.contact-form .btn-primary,
+button[type="submit"] {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    background: linear-gradient(135deg, #1d4ed8 0%, #3b82f6 100%);
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 1.0625rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 14px rgba(29, 78, 216, 0.3);
+}
+
+.admission-form .btn-primary:hover,
+.contact-form .btn-primary:hover,
+button[type="submit"]:hover {
+    background: linear-gradient(135deg, #1e40af 0%, #2563eb 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(29, 78, 216, 0.4);
+}
+
+/* ========================================
+   ALERT / MESSAGE STYLES
+   ======================================== */
+
+.alert {
+    padding: 1rem 1.25rem;
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--spacing-lg);
+    font-weight: 500;
+    font-size: var(--font-size-sm);
+    border: 1px solid;
+}
+
+.alert-success { background: #ecfdf5; color: #065f46; border-color: var(--color-success); }
+.alert-error { background: #fef2f2; color: #991b1b; border-color: var(--color-error); }
+.alert-warning { background: #fffbeb; color: #92400e; border-color: var(--color-warning); }
+.alert-info { background: #eff6ff; color: #1e40af; border-color: #3b82f6; }
+
+/* ========================================
+   BADGE STYLES
+   ======================================== */
+
+.badge {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-base);
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.badge-primary { background: linear-gradient(135deg, #1d4ed8 0%, #3b82f6 100%); color: #ffffff; }
+.badge-accent { background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%); color: #ffffff; }
+.badge-success { background: var(--color-success); color: var(--color-white); }
+.badge-warning { background: var(--color-warning); color: #78350f; }
+.badge-error { background: var(--color-error); color: var(--color-white); }
+
+/* ========================================
+   LOADING STATE
+   ======================================== */
+
+.loading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 300px;
+}
+
+.spinner {
+    width: 48px;
+    height: 48px;
+    border: 3px solid var(--color-light-gray);
+    border-top-color: #1d4ed8;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* ========================================
+   NO DATA STATE
+   ======================================== */
+
+.no-data {
+    text-align: center;
+    padding: var(--spacing-3xl);
+    background: var(--color-white);
+    border-radius: var(--radius-xl);
+    border: 2px dashed var(--color-light-gray);
+    margin-top: var(--spacing-xl);
+}
+
+.no-data p {
+    color: var(--color-gray);
+    font-size: var(--font-size-lg);
+    margin: 0;
+}
+
+/* ========================================
+   FOOTER
+   ======================================== */
+
+.footer {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    color: #ffffff;
+}
+
+.footer a { color: #93c5fd; }
+.footer a:hover { color: #60a5fa; }
+
+/* ========================================
+   STATS SECTION - FULL WIDTH (UPDATED!)
+   ======================================== */
+
+.stats-section {
+    background: linear-gradient(135deg, #1e40af 0%, #1d4ed8 50%, #2563eb 100%);
+    /* 🔥 YE NAYE RULES ADD KIYE HAI - FULL WIDTH KE LIYE */
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    padding: 5rem 0;
+}
+
+/* Stats section ke andar ka container normal width mein rahe */
+.stats-section .container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+@media (max-width: 768px) {
+    .stats-section {
+        padding: 3rem 0;
+    }
+    
+    .stats-section .container {
+        padding: 0 1rem;
+    }
+}
+
+/* ========================================
+   RESPONSIVE UTILITIES
+   ======================================== */
+
+@media (max-width: 768px) {
+    .hide-mobile { display: none !important; }
+}
+
+@media (min-width: 769px) {
+    .hide-desktop { display: none !important; }
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+@media (max-width: 1024px) {
+    :root {
+        --font-size-5xl: 2.5rem;
+        --font-size-4xl: 2rem;
+        --font-size-3xl: 1.75rem;
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        --spacing-4xl: 3rem;
+        --spacing-3xl: 2.5rem;
+    }
+
+    .section { padding: var(--spacing-3xl) 0; }
+    .section-title { font-size: var(--font-size-3xl); }
+    h1 { font-size: var(--font-size-4xl); }
+    h2 { font-size: var(--font-size-3xl); }
+    h3 { font-size: var(--font-size-2xl); }
+
+    .page-header,
+    .about-header,
+    .events-header,
+    .gallery-header,
+    .contact-header,
+    .faculty-header,
+    .admission-header {
+        padding: 3rem 0;
+    }
+
+    .page-header h1,
+    .about-header h1,
+    .events-header h1,
+    .gallery-header h1,
+    .contact-header h1,
+    .faculty-header h1,
+    .admission-header h1 {
+        font-size: 2rem;
+    }
+
+    .page-header p,
+    .about-header p,
+    .events-header p,
+    .gallery-header p,
+    .contact-header p,
+    .faculty-header p,
+    .admission-header p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    :root {
+        --spacing-4xl: 2rem;
+        --spacing-3xl: 1.5rem;
+    }
+
+    .section { padding: var(--spacing-2xl) 0; }
+    .btn { width: 100%; }
+}
+
+/* ========================================
+   ACCESSIBILITY
+   ======================================== */
+
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--color-primary);
+    color: var(--color-white);
+    padding: 8px;
+    text-decoration: none;
+    z-index: 100;
+}
+
+.skip-link:focus { top: 0; }
+
+*:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    html { scroll-behavior: auto; }
+}
+
+/* ========================================
+   PRINT STYLES
+   ======================================== */
+
+@media print {
+    .navbar, .footer, .btn, .no-print { display: none !important; }
+    body { background: white; color: black; }
+    .section { page-break-inside: avoid; }
+}
+
+/* ========================================
+   CUSTOM SCROLLBAR
+   ======================================== */
+
+::-webkit-scrollbar { width: 12px; }
+::-webkit-scrollbar-track { background: var(--color-light); }
+::-webkit-scrollbar-thumb { background: var(--color-gray); border-radius: var(--radius-full); }
+::-webkit-scrollbar-thumb:hover { background: var(--color-dark-gray); }
+
+/* ========================================
+   SELECTION
+   ======================================== */
+
+::selection { background: rgba(29, 78, 216, 0.2); color: var(--color-dark); }
+::-moz-selection { background: rgba(29, 78, 216, 0.2); color: var(--color-dark); }
