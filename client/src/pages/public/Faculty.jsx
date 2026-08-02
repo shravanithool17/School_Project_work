@@ -35,7 +35,7 @@ const MOCK_FACULTY = [
         qualification: 'Ph.D. in Physics, M.Sc., B.Ed.',
         qualification_mr: 'पीएच.डी., एम.एससी., बी.एड.',
         experience: 18,
-        profile_image: 'teacher1.jpg'
+        profile_image: 'teacher_female_1.png'
     },
     {
         id: 3,
@@ -48,7 +48,7 @@ const MOCK_FACULTY = [
         qualification: 'M.Sc. Mathematics, B.Ed.',
         qualification_mr: 'एम.एससी. गणित, बी.एड.',
         experience: 14,
-        profile_image: 'teacher2.jpg'
+        profile_image: 'teacher_male_1.png'
     },
     {
         id: 4,
@@ -61,7 +61,7 @@ const MOCK_FACULTY = [
         qualification: 'M.A. English, B.Ed.',
         qualification_mr: 'एम.ए. इंग्रजी, बी.एड.',
         experience: 12,
-        profile_image: 'teacher3.jpg'
+        profile_image: 'teacher_female_2.png'
     },
     {
         id: 5,
@@ -74,7 +74,7 @@ const MOCK_FACULTY = [
         qualification: 'M.P.Ed.',
         qualification_mr: 'एम.पी.एड.',
         experience: 10,
-        profile_image: 'profile_baljit.jpg'
+        profile_image: 'teacher_sports.png'
     },
     {
         id: 6,
@@ -87,7 +87,7 @@ const MOCK_FACULTY = [
         qualification: 'M.C.A., B.Ed.',
         qualification_mr: 'एम.सी.ए., बी.एड.',
         experience: 9,
-        profile_image: 'profile_manmeet.jpg'
+        profile_image: 'teacher_female_2.png'
     }
 ];
 
