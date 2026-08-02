@@ -3,29 +3,51 @@ import { useTranslation } from 'react-i18next';
 import { galleryService } from '../../services';
 import './Gallery.css';
 
+const MOCK_GALLERY = [
+    { id: 1, title: 'KV Yavatmal Main Building & Campus', title_mr: 'केव्ही यवतमाळ मुख्य इमारत व परिसर', category: 'Campus', category_mr: 'परिसर', image_path: 'slide1.jpg' },
+    { id: 2, title: 'Annual Sports Day & Athletics', title_mr: 'वार्षिक क्रीडा दिन व मैदानी खेळ', category: 'Sports', category_mr: 'क्रीडा', image_path: 'slide2.jpg' },
+    { id: 3, title: 'Cultural Fest & Annual Day Celebration', title_mr: 'सांस्कृतिक उत्सव व वार्षिक स्नेहसंमेलन', category: 'Cultural', category_mr: 'सांस्कृतिक', image_path: 'slide3.jpg' },
+    { id: 4, title: 'Science Exhibition & Lab Demonstration', title_mr: 'विज्ञान प्रदर्शन व प्रयोगशाळा प्रात्यक्षिक', category: 'Science', category_mr: 'विज्ञान', image_path: 'full2.jpg' },
+    { id: 5, title: 'School Assembly & Flag Hoisting', title_mr: 'शालेय परिपाठ व ध्वजारोहण', category: 'Events', category_mr: 'कार्यक्रम', image_path: 'full3.jpg' },
+    { id: 6, title: 'Art & Craft Workshop', title_mr: 'कला व हस्तकला कार्यशाळा', category: 'Activities', category_mr: 'उपक्रम', image_path: 'full4.jpg' },
+    { id: 7, title: 'Inter-House Football Championship', title_mr: 'आंतर-गृह फुटबॉल स्पर्धा', category: 'Sports', category_mr: 'क्रीडा', image_path: 'full5.jpg' },
+    { id: 8, title: 'Digital Library & Computer Center', title_mr: 'डिजिटल ग्रंथालय व संगणक केंद्र', category: 'Campus', category_mr: 'परिसर', image_path: 'full6.jpg' },
+];
+
+const MOCK_CATEGORIES = ['Campus', 'Sports', 'Cultural', 'Science', 'Events', 'Activities'];
+
 function Gallery() {
     const { t, i18n } = useTranslation();
     const lang = i18n.language;
 
-    const [images, setImages]               = useState([]);
-    const [categories, setCategories]       = useState([]);
+    const [images, setImages]               = useState(MOCK_GALLERY);
+    const [categories, setCategories]       = useState(MOCK_CATEGORIES);
     const [selectedCategory, setSelectedCategory] = useState('');
-    const [loading, setLoading]             = useState(true);
+    const [loading, setLoading]             = useState(false);
     const [activeIndex, setActiveIndex]     = useState(0);
     const [lightbox, setLightbox]           = useState(null);
     const timerRef = useRef(null);
 
     useEffect(() => {
         galleryService.getCategories()
-            .then(r => setCategories(r.data || []))
-            .catch(console.error);
+            .then(r => setCategories(r.data && r.data.length > 0 ? r.data : MOCK_CATEGORIES))
+            .catch(() => setCategories(MOCK_CATEGORIES));
     }, []);
 
     useEffect(() => {
         setLoading(true);
         galleryService.getAll(selectedCategory || null)
-            .then(r => { setImages(r.data || []); setActiveIndex(0); })
-            .catch(console.error)
+            .then(r => {
+                const list = (r.data && r.data.length > 0) 
+                    ? r.data 
+                    : MOCK_GALLERY.filter(i => !selectedCategory || i.category === selectedCategory);
+                setImages(list);
+                setActiveIndex(0);
+            })
+            .catch(() => {
+                const list = MOCK_GALLERY.filter(i => !selectedCategory || i.category === selectedCategory);
+                setImages(list);
+            })
             .finally(() => setLoading(false));
     }, [selectedCategory]);
 
