@@ -4,14 +4,14 @@ import { galleryService } from '../../services';
 import './Gallery.css';
 
 const MOCK_GALLERY = [
-    { id: 1, title: 'KV Yavatmal Main Building & Campus', title_mr: 'केव्ही यवतमाळ मुख्य इमारत व परिसर', category: 'Campus', category_mr: 'परिसर', image_path: 'slide1.jpg' },
-    { id: 2, title: 'Annual Sports Day & Athletics', title_mr: 'वार्षिक क्रीडा दिन व मैदानी खेळ', category: 'Sports', category_mr: 'क्रीडा', image_path: 'slide2.jpg' },
-    { id: 3, title: 'Cultural Fest & Annual Day Celebration', title_mr: 'सांस्कृतिक उत्सव व वार्षिक स्नेहसंमेलन', category: 'Cultural', category_mr: 'सांस्कृतिक', image_path: 'slide3.jpg' },
-    { id: 4, title: 'Science Exhibition & Lab Demonstration', title_mr: 'विज्ञान प्रदर्शन व प्रयोगशाळा प्रात्यक्षिक', category: 'Science', category_mr: 'विज्ञान', image_path: 'full2.jpg' },
-    { id: 5, title: 'School Assembly & Flag Hoisting', title_mr: 'शालेय परिपाठ व ध्वजारोहण', category: 'Events', category_mr: 'कार्यक्रम', image_path: 'full3.jpg' },
-    { id: 6, title: 'Art & Craft Workshop', title_mr: 'कला व हस्तकला कार्यशाळा', category: 'Activities', category_mr: 'उपक्रम', image_path: 'full4.jpg' },
-    { id: 7, title: 'Inter-House Football Championship', title_mr: 'आंतर-गृह फुटबॉल स्पर्धा', category: 'Sports', category_mr: 'क्रीडा', image_path: 'full5.jpg' },
-    { id: 8, title: 'Digital Library & Computer Center', title_mr: 'डिजिटल ग्रंथालय व संगणक केंद्र', category: 'Campus', category_mr: 'परिसर', image_path: 'full6.jpg' },
+    { id: 1, title: 'Kendriya Vidyalaya Yavatmal Main Building', title_mr: 'केव्ही यवतमाळ मुख्य इमारत व परिसर', category: 'Campus', category_mr: 'परिसर', image_path: 'kv_campus.png' },
+    { id: 2, title: 'Annual Sports Day Track & Athletics', title_mr: 'वार्षिक क्रीडा दिन व मैदानी खेळ', category: 'Sports', category_mr: 'क्रीडा', image_path: 'kv_sports_day.png' },
+    { id: 3, title: 'Cultural Fest Dance & Celebration', title_mr: 'सांस्कृतिक उत्सव व वार्षिक स्नेहसंमेलन', category: 'Cultural', category_mr: 'सांस्कृतिक', image_path: 'kv_cultural_fest.png' },
+    { id: 4, title: 'Science Exhibition & Physics/Chemistry Lab', title_mr: 'विज्ञान प्रदर्शन व प्रयोगशाळा प्रात्यक्षिक', category: 'Science', category_mr: 'विज्ञान', image_path: 'kv_science_lab.png' },
+    { id: 5, title: 'School Assembly & Flag Hoisting', title_mr: 'शालेय परिपाठ व ध्वजारोहण', category: 'Events', category_mr: 'कार्यक्रम', image_path: 'kv_campus.png' },
+    { id: 6, title: 'Inter-House Sports Tournament', title_mr: 'आंतर-गृह क्रीडा स्पर्धा', category: 'Sports', category_mr: 'क्रीडा', image_path: 'kv_sports_day.png' },
+    { id: 7, title: 'Annual Cultural Festival Stage Performance', title_mr: 'वार्षिक सांस्कृतिक मंच सादरीकरण', category: 'Cultural', category_mr: 'सांस्कृतिक', image_path: 'kv_cultural_fest.png' },
+    { id: 8, title: 'Student Science Demonstration', title_mr: 'विद्यार्थी विज्ञान प्रात्यक्षिक', category: 'Science', category_mr: 'विज्ञान', image_path: 'kv_science_lab.png' },
 ];
 
 const MOCK_CATEGORIES = ['Campus', 'Sports', 'Cultural', 'Science', 'Events', 'Activities'];
