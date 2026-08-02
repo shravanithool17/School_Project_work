@@ -234,7 +234,7 @@ function FacultyManagement() {
                                             <td>
                                                 {member.profile_image && (
                                                     <img
-                                                        src={`http://localhost:5000/uploads/${member.profile_image}`}
+                                                        src={`/uploads/${member.profile_image}`}
                                                         alt={member.name}
                                                         className="table-image"
                                                     />

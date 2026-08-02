@@ -51,7 +51,7 @@ function Gallery() {
 
     const getTitle    = img => (!img ? '' : (lang === 'mr' && img.title_mr)    ? img.title_mr    : img.title);
     const getCategory = img => (!img ? '' : (lang === 'mr' && img.category_mr) ? img.category_mr : img.category);
-    const imgSrc      = path => `http://localhost:5000/uploads/${path}`;
+    const imgSrc      = path => `/uploads/${path}`;
 
     const goTo   = (i) => { clearInterval(timerRef.current); setActiveIndex(i); };
     const goPrev = () => goTo((activeIndex - 1 + images.length) % images.length);

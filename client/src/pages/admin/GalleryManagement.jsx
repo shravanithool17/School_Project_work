@@ -162,7 +162,7 @@ function GalleryManagement() {
                             {images.map((image) => (
                                 <div key={image.id} className="gallery-admin-item">
                                     <img
-                                        src={`http://localhost:5000/uploads/${image.image_path}`}
+                                        src={`/uploads/${image.image_path}`}
                                         alt={image.title}
                                     />
                                     <div className="gallery-admin-info">

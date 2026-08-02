@@ -233,7 +233,7 @@ function EventsManagement() {
                                             <td>
                                                 {event.image && (
                                                     <img
-                                                        src={`http://localhost:5000/uploads/${event.image}`}
+                                                        src={`/uploads/${event.image}`}
                                                         alt={event.title}
                                                         className="table-image"
                                                     />

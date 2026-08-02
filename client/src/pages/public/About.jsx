@@ -114,7 +114,7 @@ function About() {
                                     <div className="principal-card-modern">
                                         <div className="principal-photo">
                                             <img
-                                                src="http://localhost:5000/uploads/realprinci.jpg"
+                                                src="/uploads/realprinci.jpg"
                                                 alt={t('about.principal.name')}
                                                 style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '50%' }}
                                                 onError={(e) => { e.target.style.display = 'none'; }}

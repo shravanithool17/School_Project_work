@@ -332,9 +332,9 @@ export default function Home() {
                                 {isMr ? 'इयत्ता दहावी' : 'Class X'}
                             </div>
                             <div className="toppers-row">
-                                <TopperCard rank={1} name="Akshara Jaisingpure" nameMr="अक्षरा जैसिंगपुरे" score="98.0" photo="http://localhost:5000/uploads/akshara_image.jpg" />
-                                <TopperCard rank={2} name="Atharva Kale"        nameMr="अथर्व काळे"         score="96.4" photo="http://localhost:5000/uploads/atharva_image.jpg" />
-                                <TopperCard rank={3} name="Manaswa Gadhave"     nameMr="मानस्वा गाढवे"      score="95.8" photo="http://localhost:5000/uploads/manaswa_image.jpg" />
+                                <TopperCard rank={1} name="Akshara Jaisingpure" nameMr="अक्षरा जैसिंगपुरे" score="98.0" photo="/uploads/akshara_image.jpg" />
+                                <TopperCard rank={2} name="Atharva Kale"        nameMr="अथर्व काळे"         score="96.4" photo="/uploads/atharva_image.jpg" />
+                                <TopperCard rank={3} name="Manaswa Gadhave"     nameMr="मानस्वा गाढवे"      score="95.8" photo="/uploads/manaswa_image.jpg" />
                             </div>
                         </div>
                         <div className="toppers-divider" />
@@ -344,9 +344,9 @@ export default function Home() {
                                 {isMr ? 'इयत्ता बारावी' : 'Class XII'}
                             </div>
                             <div className="toppers-row">
-                                <TopperCard rank={1} name="Siddhi Wattamwar" nameMr="सिद्धी वट्टमवार" score="83.20" stream="Science"  streamMr="विज्ञान"   photo="http://localhost:5000/uploads/siddhi.jpg" />
-                                <TopperCard rank={2} name="Tanishka Yadav"   nameMr="तनिष्का यादव"    score="82.6"  stream="Science"  streamMr="विज्ञान"   photo="http://localhost:5000/uploads/tanishka.jpg" />
-                                <TopperCard rank={3} name="Mayank Ramapure"  nameMr="मयंक रामापुरे"   score="81.0"  stream="Commerce" streamMr="वाणिज्य"  photo="http://localhost:5000/uploads/mayank.jpg" />
+                                <TopperCard rank={1} name="Siddhi Wattamwar" nameMr="सिद्धी वट्टमवार" score="83.20" stream="Science"  streamMr="विज्ञान"   photo="/uploads/siddhi.jpg" />
+                                <TopperCard rank={2} name="Tanishka Yadav"   nameMr="तनिष्का यादव"    score="82.6"  stream="Science"  streamMr="विज्ञान"   photo="/uploads/tanishka.jpg" />
+                                <TopperCard rank={3} name="Mayank Ramapure"  nameMr="मयंक रामापुरे"   score="81.0"  stream="Commerce" streamMr="वाणिज्य"  photo="/uploads/mayank.jpg" />
                             </div>
                         </div>
                     </div>
@@ -379,7 +379,7 @@ export default function Home() {
                     <div className="principal-teaser">
                         <div className="principal-teaser-photo">
                             <img
-                                src="http://localhost:5000/uploads/principal.jpg"
+                                src="/uploads/principal.jpg"
                                 alt="Principal"
                                 onError={e => {
                                     e.target.style.display = 'none';

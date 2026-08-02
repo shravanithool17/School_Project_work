@@ -86,7 +86,7 @@ function Profile() {
                         <div className="profile-sidebar">
                             {user.profile_picture ? (
                                 <img
-                                    src={`http://localhost:5000/uploads/${user.profile_picture}`}
+                                    src={`/uploads/${user.profile_picture}`}
                                     alt={user.full_name}
                                     className="profile-avatar"
                                 />

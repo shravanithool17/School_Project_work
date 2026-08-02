@@ -54,7 +54,7 @@ function EventCard({ event }) {
         <div className={`ev-card ${isEvent ? 'ev-card--event' : 'ev-card--news'}`}>
             {event.image ? (
                 <div className="ev-card__image">
-                    <img src={`http://localhost:5000/uploads/${event.image}`} alt={title}
+                    <img src={`/uploads/${event.image}`} alt={title}
                         onError={e => e.target.style.display = 'none'} />
                 </div>
             ) : (
