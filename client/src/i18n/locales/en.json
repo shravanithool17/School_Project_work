@@ -10,10 +10,10 @@
     "admission": "Admission",
     "students": "Student Section",
     "contact": "Contact",
-    "school": "New High School"
+    "school": "Kendriya Vidyalaya Yavatmal"
   },
   "home": {
-    "welcome": "Welcome to New High School, Kolhapur",
+    "welcome": "Welcome to Kendriya Vidyalaya Yavatmal",
     "announcements": "Announcements",
     "notices": "Notices",
     "latestEvents": "Latest Events",
@@ -27,7 +27,7 @@
     "toppersTitle": "🏅 Our School Toppers",
     "toppersSub": "CBSE Board Examinations — Class X and XII",
     "admissionOpen": "Admission Open",
-    "ctaTitle": "Join New High School\nAcademic Year 2026–27",
+    "ctaTitle": "Join Kendriya Vidyalaya Yavatmal\nAcademic Year 2026–27",
     "ctaDesc": "Limited seats available. Give your child the best education with experienced teachers, modern infrastructure, and a proven track record of excellence.",
     "applyNowBtn": "Apply Now →",
     "contactAdmission": "Contact Admission Office",
@@ -90,7 +90,7 @@
     "message": "Principal's Message",
     "messageFrom": "Message from the Principal",
     "principalTitle": "Principal",
-    "principalText": "Welcome to New High School, Kolhapur.",
+    "principalText": "Welcome to Kendriya Vidyalaya Yavatmal.",
     "principalName": "- Dr. Rajesh Kumar, Principal",
     "facilitiesTitle": "Our Facilities",
     "tabs": {
@@ -164,7 +164,7 @@
   "events": {
     "title": "Events & News",
     "subtitle": "Stay updated with our latest events and news",
-    "pageSubtitle": "Discover the vibrant life at New High School — from Sports Days to academic milestones",
+    "pageSubtitle": "Discover the vibrant life at Kendriya Vidyalaya Yavatmal — from Sports Days to academic milestones",
     "all": "All",
     "events": "Events",
     "news": "News",
@@ -187,7 +187,7 @@
   },
   "admission": {
     "title": "Admission Enquiry",
-    "subtitle": "Apply for admission to New High School, Kolhapur",
+    "subtitle": "Apply for admission to Kendriya Vidyalaya Yavatmal",
     "studentName": "Student's Name",
     "parentName": "Parent's Name",
     "mobile": "Mobile Number",
@@ -245,7 +245,7 @@
     "sendAnother": "Send Another Message",
     "sending": "Sending...",
     "findUs": "Find Us",
-    "findUsDesc": "We welcome you to New High School, Kolhapur",
+    "findUsDesc": "We welcome you to Kendriya Vidyalaya Yavatmal",
     "subjects": {
       "admission": "Admission",
       "academics": "Academics",
@@ -266,13 +266,13 @@
     "privacy": "Privacy Policy",
     "terms": "Terms of Service",
     "sitemap": "Sitemap",
-    "copyright": "© 2026 New High School, Kolhapur. All rights reserved.",
-    "address": "123 Education Street, Kolhapur, Maharashtra 416001",
+    "copyright": "© 2026 Kendriya Vidyalaya Yavatmal. All rights reserved.",
+    "address": "Kendriya Vidyalaya, Yavatmal, Maharashtra 445001",
     "phone": "+91 123 456 7890",
-    "email": "info@newhighschool.edu",
+    "email": "info@kvyavatmal.edu",
     "officeHours": "Mon - Fri: 8:00 AM - 4:00 PM",
-    "location": "Kolhapur, Maharashtra",
-    "schoolName": "New High School"
+    "location": "Yavatmal, Maharashtra",
+    "schoolName": "Kendriya Vidyalaya Yavatmal"
   },
   "common": {
     "loading": "Loading...",

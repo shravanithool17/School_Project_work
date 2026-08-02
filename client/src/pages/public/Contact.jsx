@@ -82,7 +82,7 @@ function Contact() {
                                     <div className="ct-info-icon">📍</div>
                                     <div>
                                         <p className="ct-info-label">{t('contact.addressLabel')}</p>
-                                        <p className="ct-info-value">New High School, Station Road,<br />Kolhapur, Maharashtra – 416001</p>
+                                        <p className="ct-info-value">Kendriya Vidyalaya, Dhamangaon Road,<br />Yavatmal, Maharashtra – 445001</p>
                                     </div>
                                 </div>
                                 <div className="ct-info-item">

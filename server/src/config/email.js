@@ -20,7 +20,7 @@ const sendEmail = async ({ to, subject, text, html }) => {
         const transporter = createTransporter();
 
         const mailOptions = {
-            from: `"${process.env.SCHOOL_NAME || 'New High School'}" <${process.env.SMTP_USER}>`,
+            from: `"${process.env.SCHOOL_NAME || 'Kendriya Vidyalaya Yavatmal'}" <${process.env.SMTP_USER}>`,
             to,
             subject,
             text,
@@ -38,11 +38,11 @@ const sendEmail = async ({ to, subject, text, html }) => {
 
 // Send reply to contact message
 const sendContactReply = async ({ recipientEmail, recipientName, replyMessage, originalMessage }) => {
-    const subject = 'Reply to Your Message - New High School';
+    const subject = 'Reply to Your Message - Kendriya Vidyalaya Yavatmal';
 
     const html = `
     <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-      <h2 style="color: #2563eb;">New High School, Kolhapur</h2>
+      <h2 style="color: #2563eb;">Kendriya Vidyalaya Yavatmal</h2>
       <p>Dear ${recipientName},</p>
       <p>Thank you for contacting us. Here is our response to your message:</p>
       
@@ -57,7 +57,7 @@ const sendContactReply = async ({ recipientEmail, recipientName, replyMessage, o
         <p style="margin: 0; white-space: pre-wrap;">${originalMessage}</p>
       </div>
       
-      <p style="margin-top: 30px;">Best regards,<br>New High School<br>Kolhapur</p>
+      <p style="margin-top: 30px;">Best regards,<br>Kendriya Vidyalaya<br>Yavatmal</p>
       
       <hr style="border: 1px solid #e5e7eb; margin: 20px 0;">
       <p style="color: #9ca3af; font-size: 12px;">

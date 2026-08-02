@@ -67,8 +67,8 @@ function SignUp() {
                 <div className="auth-brand">
                     <div className="auth-logo"><School size={24} /></div>
                     <div className="auth-brand-text">
-                        <h1>New High School</h1>
-                        <p className="auth-subtitle">Kolhapur, Maharashtra</p>
+                        <h1>Kendriya Vidyalaya Yavatmal</h1>
+                        <p className="auth-subtitle">Yavatmal, Maharashtra</p>
                     </div>
                 </div>
 

@@ -35,7 +35,7 @@ function Login() {
             <div className="login-container">
                 <div className="login-card">
                     <h1>Admin Login</h1>
-                    <p className="text-muted">New High School, Kolhapur</p>
+                    <p className="text-muted">Kendriya Vidyalaya Yavatmal</p>
 
                     <form onSubmit={handleSubmit} className="login-form">
                         <div className="form-group">

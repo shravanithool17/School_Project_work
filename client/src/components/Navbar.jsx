@@ -65,11 +65,11 @@ function Navbar() {
                         <div className="navbar-brand">
                             <Link to="/" className="brand-link">
                                 <div className="brand-logo">
-                                    <div className="logo-icon">NHS</div>
+                                    <div className="logo-icon">KVY</div>
                                 </div>
                                 <div className="brand-text">
-                                    <h1 className="brand-title">New High School</h1>
-                                    <p className="brand-subtitle">Kolhapur, Maharashtra</p>
+                                    <h1 className="brand-title">Kendriya Vidyalaya Yavatmal</h1>
+                                    <p className="brand-subtitle">Yavatmal, Maharashtra</p>
                                 </div>
                             </Link>
                         </div>

@@ -31,10 +31,10 @@ function Footer() {
                     {/* Brand */}
                     <div className="footer-section footer-brand">
                         <div className="footer-logo">
-                            <div className="footer-logo-icon">NHS</div>
+                            <div className="footer-logo-icon">KVY</div>
                             <div className="footer-brand-text">
-                                <h3 className="footer-school-name">New High School</h3>
-                                <p className="footer-school-location">Kolhapur, Maharashtra</p>
+                                <h3 className="footer-school-name">Kendriya Vidyalaya Yavatmal</h3>
+                                <p className="footer-school-location">Yavatmal, Maharashtra</p>
                             </div>
                         </div>
                         <p className="footer-description">{t('footer.aboutDesc')}</p>
@@ -98,7 +98,7 @@ function Footer() {
                 <div className="footer-bottom">
                     <div className="footer-bottom-content">
                         <p className="copyright">
-                            © {currentYear} New High School, Kolhapur. {t('footer.copyright').split('.').slice(-1)[0]}
+                            © {currentYear} Kendriya Vidyalaya Yavatmal. {t('footer.copyright').split('.').slice(-1)[0]}
                         </p>
                         <div className="footer-legal">
                             <Link to="/privacy" className="legal-link">{t('footer.privacy')}</Link>
