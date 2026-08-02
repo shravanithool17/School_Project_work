@@ -124,3 +124,15 @@ INSERT INTO events (title, description, type, event_date, is_published) VALUES
 INSERT INTO announcements (title, description, start_date, end_date, is_active) VALUES
 ('Admission Open for 2026-27', 'Admissions are now open for all classes. Apply before March 31st.', '2026-02-01', '2026-03-31', true),
 ('Winter Break Notice', 'School will remain closed from Dec 24 to Jan 5 for winter break.', '2026-12-15', '2026-01-10', true);
+
+-- Sample Gallery Data
+INSERT INTO gallery (title, image_path, category) VALUES
+('KV Yavatmal Main Building & Campus', 'slide1.jpg', 'Campus'),
+('Annual Sports Day & Athletics', 'slide2.jpg', 'Sports'),
+('Cultural Fest & Annual Day Celebration', 'slide3.jpg', 'Cultural'),
+('Science Exhibition & Lab Demonstration', 'full2.jpg', 'Science'),
+('School Assembly & Flag Hoisting', 'full3.jpg', 'Events'),
+('Art & Craft Workshop', 'full4.jpg', 'Activities'),
+('Inter-House Football Championship', 'full5.jpg', 'Sports'),
+('Digital Library & Computer Center', 'full6.jpg', 'Campus');
+
