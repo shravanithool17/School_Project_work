@@ -10,7 +10,92 @@ import teacher3 from '../../assets/teacher3.jpg';
 
 const facultyImages = { teacher1, teacher2, teacher3 };
 
+const MOCK_FACULTY = [
+    {
+        id: 1,
+        name: 'Kiran K Mendhe',
+        name_mr: 'किरण के. मेंढे',
+        designation: 'Principal',
+        designation_mr: 'मुख्याध्यापक',
+        department: 'Administration',
+        department_mr: 'प्रशासन',
+        qualification: 'M.Sc., B.Ed., M.Ed.',
+        qualification_mr: 'एम.एससी., बी.एड., एम.एड.',
+        experience: 25,
+        profile_image: 'realprinci.jpg'
+    },
+    {
+        id: 2,
+        name: 'Dr. Sunita Patil',
+        name_mr: 'डॉ. सुनिता पाटील',
+        designation: 'Head of Department',
+        designation_mr: 'विभागप्रमुख',
+        department: 'Science',
+        department_mr: 'विज्ञान',
+        qualification: 'Ph.D. in Physics, M.Sc., B.Ed.',
+        qualification_mr: 'पीएच.डी., एम.एससी., बी.एड.',
+        experience: 18,
+        profile_image: 'teacher1.jpg'
+    },
+    {
+        id: 3,
+        name: 'Amit Deshmukh',
+        name_mr: 'अमित देशमुख',
+        designation: 'Senior PGT Teacher',
+        designation_mr: 'वरिष्ठ पीजीटी शिक्षक',
+        department: 'Mathematics',
+        department_mr: 'गणित',
+        qualification: 'M.Sc. Mathematics, B.Ed.',
+        qualification_mr: 'एम.एससी. गणित, बी.एड.',
+        experience: 14,
+        profile_image: 'teacher2.jpg'
+    },
+    {
+        id: 4,
+        name: 'Anjali Sharma',
+        name_mr: 'अंजली शर्मा',
+        designation: 'PGT English',
+        designation_mr: 'पीजीटी इंग्रजी',
+        department: 'Languages',
+        department_mr: 'भाषा',
+        qualification: 'M.A. English, B.Ed.',
+        qualification_mr: 'एम.ए. इंग्रजी, बी.एड.',
+        experience: 12,
+        profile_image: 'teacher3.jpg'
+    },
+    {
+        id: 5,
+        name: 'Baljit Singh',
+        name_mr: 'बलजित सिंग',
+        designation: 'Physical Education Teacher',
+        designation_mr: 'क्रीडा शिक्षक',
+        department: 'Sports',
+        department_mr: 'क्रीडा',
+        qualification: 'M.P.Ed.',
+        qualification_mr: 'एम.पी.एड.',
+        experience: 10,
+        profile_image: 'profile_baljit.jpg'
+    },
+    {
+        id: 6,
+        name: 'Manmeet Kaur',
+        name_mr: 'मनमीत कौर',
+        designation: 'TGT Computer Science',
+        designation_mr: 'संगणक शिक्षक',
+        department: 'Computer Science',
+        department_mr: 'संगणक विज्ञान',
+        qualification: 'M.C.A., B.Ed.',
+        qualification_mr: 'एम.सी.ए., बी.एड.',
+        experience: 9,
+        profile_image: 'profile_manmeet.jpg'
+    }
+];
+
 const getImage = (member, index) => {
+    if (member.profile_image) {
+        if (member.profile_image.startsWith('http://') || member.profile_image.startsWith('https://')) return member.profile_image;
+        return `/uploads/${member.profile_image}`;
+    }
     if (member.image_key && facultyImages[member.image_key])
         return facultyImages[member.image_key];
     const keys = ['teacher1', 'teacher2', 'teacher3'];
@@ -151,13 +236,18 @@ function Faculty() {
     useEffect(() => {
         facultyService.getAll()
             .then(r => {
-                const data = r.data || [];
+                const data = (r.data && r.data.length > 0) ? r.data : MOCK_FACULTY;
                 setFaculty(data);
                 setFiltered(data);
                 const depts = ['All', ...new Set(data.map(m => m.department).filter(Boolean))];
                 setDepts(depts);
             })
-            .catch(console.error)
+            .catch(() => {
+                setFaculty(MOCK_FACULTY);
+                setFiltered(MOCK_FACULTY);
+                const depts = ['All', ...new Set(MOCK_FACULTY.map(m => m.department).filter(Boolean))];
+                setDepts(depts);
+            })
             .finally(() => setLoading(false));
     }, []);
 
