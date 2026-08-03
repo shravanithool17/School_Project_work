@@ -1,5 +1,12 @@
 {
+  "name": "school-project-root",
+  "private": true,
+  "scripts": {
+    "build": "npm run build --prefix client",
+    "dev": "npm run dev --prefix client"
+  },
   "dependencies": {
     "lucide-react": "^0.563.0"
   }
 }
+
